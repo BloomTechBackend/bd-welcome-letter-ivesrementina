@@ -32,10 +32,73 @@ public class Employee {
         this.startdate = startdate;
         this.role = role;
         this.company = company;
+
     }
 
     //TODO: Create Builder Class
+    public static class builder {
 
+        private String firstname;
+        private String lastname;
+        private String phonenumber;
+        private String email;
+        private int salary;
+        private LocalDate startdate;
+        private Role role;
+        private Company company;
+
+        public builder() {}
+
+        public builder withFirstname(String firstname) {
+            this.firstname = firstname;
+            return this;
+        }
+
+        public builder withLastname(String lastname) {
+            this.lastname = lastname;
+            return this;
+        }
+
+        public builder withPhonenumber(String phonenumber) {
+            this.phonenumber = phonenumber;
+            return this;
+        }
+
+        public builder withEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public builder withSalary(int salary) {
+            this.salary = salary;
+            return this;
+        }
+
+        public builder withStartdate(LocalDate startdate) {
+            this.startdate = startdate;
+            return this;
+        }
+
+        public builder withRole(Role role) {
+            this.role = role;
+            return this;
+        }
+
+        public builder withCompany(Company company) {
+            this.company = company;
+            return this;
+        }
+
+        public Employee build() {
+            if (firstname == null) {
+                throw new RuntimeException();
+            }
+            if (company == null) {
+                throw new RuntimeException();
+            }
+            return new Employee(firstname, lastname, phonenumber, email, salary, startdate, role, company);
+        }
+    }
 
     //Getters
     public String getFirstname() {

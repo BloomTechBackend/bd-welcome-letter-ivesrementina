@@ -8,7 +8,7 @@ public class Company {
     private String country;
 
     //TODO: Replace with Builder Constructor
-    public Company(String companyname, String country) {
+    private Company(String companyname, String country) {
         //Auto-generate an id
         id = maxId;
         maxId++;
@@ -18,8 +18,26 @@ public class Company {
         this.country = country;
     }
 
-    public static final class Builder {
+    public static final class builder {
         //TODO: Implement Builder Pattern
+        private String companyname;
+        private String country;
+
+        public builder() {}
+
+        public builder withCompanyname(String companyname) {
+            this.companyname = companyname;
+            return this;
+        }
+
+        public builder withCountry(String country) {
+            this.country = country;
+            return this;
+        }
+
+        public Company build() {
+            return new Company(companyname, country);
+        }
     }
 
     public int getId() {
