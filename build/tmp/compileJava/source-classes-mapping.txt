@@ -2,7 +2,7 @@ com/bloomtech/welcomeletter/services/FormLetterService.java
  com.bloomtech.welcomeletter.services.FormLetterService
 com/bloomtech/welcomeletter/models/Employee.java
  com.bloomtech.welcomeletter.models.Employee
- com.bloomtech.welcomeletter.models.Employee$builder
+ com.bloomtech.welcomeletter.models.Employee$Builder
 com/bloomtech/welcomeletter/services/EmployeeService.java
  com.bloomtech.welcomeletter.services.EmployeeService
 com/bloomtech/welcomeletter/repositories/EmployeeRepository.java
@@ -17,4 +17,4 @@ com/bloomtech/welcomeletter/fileIO/FileManager.java
  com.bloomtech.welcomeletter.fileIO.FileManager
 com/bloomtech/welcomeletter/models/Company.java
  com.bloomtech.welcomeletter.models.Company
- com.bloomtech.welcomeletter.models.Company$builder
+ com.bloomtech.welcomeletter.models.Company$Builder

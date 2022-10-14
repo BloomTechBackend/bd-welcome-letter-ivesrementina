@@ -24,8 +24,8 @@ public class MasteryTask_4_FormLetterService {
         FileManager fileManager = new FileManager();
         FormLetterService formLetterService = new FormLetterService();
         Datasource datasource = new Datasource();
-        Company company = new Company.builder().withCompanyname("test company").build();
-        Employee employee = new Employee.builder()
+        Company company = Company.builder().withCompanyname("test company").build();
+        Employee employee = Employee.builder()
                 .withFirstname("Test")
                 .withLastname("Employee")
                 .withStartdate(LocalDate.of(2022, 8, 30))

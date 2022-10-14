@@ -16,27 +16,30 @@ public class Employee {
     private Company company;
 
     //TODO: Implement Builder Pattern
+    public static Builder builder(){
+        return new Builder();
+    }
 
     //TODO: Replace with Builder Constructor
-    public Employee(String firstname, String lastname, String phonenumber, String email, int salary, LocalDate startdate, Role role, Company company) {
+    private Employee(Builder builder) {
         //Auto-generate an id
         id = maxId;
         maxId++;
 
         //TODO: Initialize fields:
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.phonenumber = phonenumber;
-        this.email = email;
-        this.salary = salary;
-        this.startdate = startdate;
-        this.role = role;
-        this.company = company;
+        this.firstname = builder.firstname;
+        this.lastname = builder.lastname;
+        this.phonenumber = builder.phonenumber;
+        this.email = builder.email;
+        this.salary = builder.salary;
+        this.startdate = builder.startdate;
+        this.role = builder.role;
+        this.company = builder.company;
 
     }
 
     //TODO: Create Builder Class
-    public static class builder {
+    public static final class Builder {
 
         private String firstname;
         private String lastname;
@@ -47,44 +50,44 @@ public class Employee {
         private Role role;
         private Company company;
 
-        public builder() {}
+        public Builder() {}
 
-        public builder withFirstname(String firstname) {
+        public Builder withFirstname(String firstname) {
             this.firstname = firstname;
             return this;
         }
 
-        public builder withLastname(String lastname) {
+        public Builder withLastname(String lastname) {
             this.lastname = lastname;
             return this;
         }
 
-        public builder withPhonenumber(String phonenumber) {
+        public Builder withPhonenumber(String phonenumber) {
             this.phonenumber = phonenumber;
             return this;
         }
 
-        public builder withEmail(String email) {
+        public Builder withEmail(String email) {
             this.email = email;
             return this;
         }
 
-        public builder withSalary(int salary) {
+        public Builder withSalary(int salary) {
             this.salary = salary;
             return this;
         }
 
-        public builder withStartdate(LocalDate startdate) {
+        public Builder withStartdate(LocalDate startdate) {
             this.startdate = startdate;
             return this;
         }
 
-        public builder withRole(Role role) {
+        public Builder withRole(Role role) {
             this.role = role;
             return this;
         }
 
-        public builder withCompany(Company company) {
+        public Builder withCompany(Company company) {
             this.company = company;
             return this;
         }
@@ -96,7 +99,7 @@ public class Employee {
             if (company == null) {
                 throw new RuntimeException();
             }
-            return new Employee(firstname, lastname, phonenumber, email, salary, startdate, role, company);
+            return new Employee(this);
         }
     }
 

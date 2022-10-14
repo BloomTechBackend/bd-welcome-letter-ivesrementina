@@ -4,39 +4,43 @@ public class Company {
     private static int maxId = 1;
     private int id;
 
+    public static Builder builder(){
+        return new Builder();
+    }
+
     private String companyname;
     private String country;
 
     //TODO: Replace with Builder Constructor
-    private Company(String companyname, String country) {
+    private Company(Builder builder) {
         //Auto-generate an id
         id = maxId;
         maxId++;
 
         //Initialize fields
-        this.companyname = companyname;
-        this.country = country;
+        this.companyname = builder.companyname;
+        this.country = builder.country;
     }
 
-    public static final class builder {
+    public static final class Builder {
         //TODO: Implement Builder Pattern
         private String companyname;
         private String country;
 
-        public builder() {}
+        public Builder() {}
 
-        public builder withCompanyname(String companyname) {
+        public Builder withCompanyname(String companyname) {
             this.companyname = companyname;
             return this;
         }
 
-        public builder withCountry(String country) {
+        public Builder withCountry(String country) {
             this.country = country;
             return this;
         }
 
         public Company build() {
-            return new Company(companyname, country);
+            return new Company(this);
         }
     }
 

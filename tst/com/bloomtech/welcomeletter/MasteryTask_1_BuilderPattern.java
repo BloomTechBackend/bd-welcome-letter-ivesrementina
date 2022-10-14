@@ -15,9 +15,9 @@ class MasteryTask_1_BuilderPattern {
     @Test
     void testBuilderCreatesValidEmployeeObjects_allFields() {
         String testemail = "test@email.com";
-        Company c1 = new Company.builder().build();
+        Company c1 = Company.builder().build();
 
-        Employee emp = new Employee.builder()
+        Employee emp = Employee.builder()
                 .withFirstname("firstname")
                 .withLastname("lastname")
                 .withPhonenumber("11111111")
@@ -35,9 +35,9 @@ class MasteryTask_1_BuilderPattern {
 
     @Test
     void testBuilderCreatesValidEmployeeObjects_onlyRequiredFields() {
-        Company c1 = new Company.builder().build();
+        Company c1 = Company.builder().build();
 
-        Employee emp = new Employee.builder()
+        Employee emp = Employee.builder()
                 .withFirstname("firstname")
                 .withCompany(c1)
                 .build();
@@ -48,16 +48,16 @@ class MasteryTask_1_BuilderPattern {
 
     @Test
     void testBuilderCreatesInvalidEmployeeObject_returnsRuntimeException() {
-        Company c1 = new Company.builder().build();
+        Company c1 = Company.builder().build();
 
         assertThrows(RuntimeException.class, ()->{
-            new Employee.builder()
+            Employee.builder()
                     .withFirstname("just firstname")
                     .build();
         });
 
         assertThrows(RuntimeException.class, ()->{
-            new Employee.builder()
+            Employee.builder()
                     .withCompany(c1)
                     .build();
         });

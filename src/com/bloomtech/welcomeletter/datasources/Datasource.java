@@ -13,19 +13,19 @@ public class Datasource {
     public static final List<Employee> employees = new ArrayList<>();
 
     public Datasource() {
-        Company company1 = new Company.builder()
+        Company company1 = Company.builder()
                 .withCompanyname("US Company")
                 .withCountry("USA")
                 .build();
 
-        Company company2 = new Company.builder()
+        Company company2 = Company.builder()
                 .withCompanyname("Paper Company")
                 .build();
 
         companies.add(company1);
         companies.add(company2);
 
-        Employee emp1 = new Employee.builder()
+        Employee emp1 = Employee.builder()
                 .withFirstname("Lucia")
                 .withLastname("Hill")
                 .withPhonenumber("123-456-7890")
@@ -36,7 +36,7 @@ public class Datasource {
                 .withCompany(company1)
                 .build();
 
-        Employee emp2 = new Employee.builder()
+        Employee emp2 = Employee.builder()
                 .withFirstname("Ian")
                 .withLastname("Lugo")
                 .withSalary(50000)

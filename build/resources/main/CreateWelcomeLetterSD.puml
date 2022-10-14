@@ -7,4 +7,26 @@ database Datasource
 participant FormLetterService
 participant FileManager
 
+App -> EmployeeService: getEmployeeById()
+
+EmployeeService -> EmployeeRepository: getEmployeeById()
+
+EmployeeRepository -> Datasource: findEmployeeById()
+
+Datasource -> FormLetterService: generateWelcomeLetter()
+
+FormLetterService -> FileManager: getTextFromFile()
+
+FileManager -> FormLetterService: writeTextToFile()
+
+FormLetterService -> Datasource: null
+
+alt failed to send
+Datasource --> EmployeeRepository: String
+EmployeeRepository --> EmployeeService : RuntimeException
+EmployeeService --> App : 500 Error
+end
+Datasource --> EmployeeRepository: sendFormToEmployeeWithId()
+EmployeeRepository --> EmployeeService: getEmployeeById()
+EmployeeService --> App: getEmployeeById()
 @enduml

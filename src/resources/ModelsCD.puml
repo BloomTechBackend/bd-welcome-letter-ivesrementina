@@ -1,3 +1,60 @@
 @startuml
+class Company{
+     - id : int
+     - companyname : String
+     - country : String
 
+     + builder() : Builder
+     - Company(Builder)
+     + Builder()
+     + withCompanyname(String) : Builder
+     + withCountry(String) : Builder
+     + build() : Company
+     + getID() : int
+     + getCompanyname() : String
+     + getCounty() : String
+}
+
+class Employee{
+    - id : int
+    - firstname : String
+    - lastname : String
+    - phonenumber : String
+    - email : String
+    - salary : int
+    - startdate : LocalDate
+    - role : Role
+    - company : Company
+
+    + builder() : Builder
+    + Employee(Builder)
+    + Builder()
+    + withFirstname(String) : Builder
+    + withLastname(String) : Builder
+    + withPhonenumber(String) : Builder
+    + withEmail(String) : Builder
+    + withSalary(int) : Builder
+    + withStartdate(LocalDate) : Builder
+    + withRole(Role) : Builder
+    + withCompany(Company) : Builder
+    + build() : Employee
+    + getFirstname() : String
+    + getLastname() : String
+    + getPhonenumber() : String
+    + getEmail() : String
+    + getSalary() : int
+    + getStartdate() : LocalDate
+    + getRole() : Role
+    + getCompany() : Company
+    + getId() : int
+}
+
+enum Role {
+    COORDINATOR
+    DATA
+    ENGINEERING
+}
+
+Company "1" --* "1.." Employee
+Employee . Role
 @enduml
