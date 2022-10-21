@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bloomtech.welcomeletter.MasteryTask_4_FileIO" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-21T01:21:23" hostname="MININT-TCFPB5L" time="0.067">
+<testsuite name="com.bloomtech.welcomeletter.MasteryTask_4_FileIO" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-21T01:38:55" hostname="MININT-TCFPB5L" time="0.067">
   <properties/>
   <testcase name="testFileManager_writeToNewFile()" classname="com.bloomtech.welcomeletter.MasteryTask_4_FileIO" time="0.041"/>
-  <testcase name="testFileManager_readExistingFile()" classname="com.bloomtech.welcomeletter.MasteryTask_4_FileIO" time="0.024"/>
+  <testcase name="testFileManager_readExistingFile()" classname="com.bloomtech.welcomeletter.MasteryTask_4_FileIO" time="0.023"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
